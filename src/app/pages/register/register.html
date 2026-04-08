@@ -1,12 +1,12 @@
-<div class="container">
+<!-- <div class="container">
 
-  <!-- LEFT SIDE -->
+  
   <div class="left">
     <h1>FixiePixie</h1>
     <p>Your smart home service partner</p>
   </div>
 
-  <!-- RIGHT SIDE -->
+  
     <div class="right">
         <mat-card style="background-color:#faf9fd;box-shadow: none;" class="register-card">
         <h2>Sign Up</h2>
@@ -41,5 +41,46 @@
         </p>
         </mat-card>
     </div>
+
+</div> -->
+
+<div class="container">
+
+  <div class="right">
+    <mat-card style="background-color:transparent; box-shadow: none;" class="register-card">
+      <h2>Create account</h2>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Full Name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="email@example.com">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Create password">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" placeholder="Repeat password">
+      </mat-form-field>
+
+      <div class="btn-group">
+        <button mat-flat-button class="primary-btn">
+          Register
+        </button>
+      </div>
+
+      <p class="link">
+        Already have an account? 
+        <a routerLink="/login">Login</a>
+      </p>
+    </mat-card>
+  </div>
 
 </div>

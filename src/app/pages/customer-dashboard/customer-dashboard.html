@@ -1,77 +1,107 @@
-<app-navbar></app-navbar>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<nav class="navbar solid-green">
+  <div class="nav-container">
+    <div class="brand-wrapper">
+      <span class="brand-text">FixiePixie</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#" class="link active">Homes</a>
+      <a href="#" class="link">Services</a>
+    </div>
+
+    <div class="nav-right">
+      <div class="location-btn white-btn">
+        <span class="material-icons">room</span>
+        <span class="btn-text">Select Location</span>
+        <span class="material-icons">expand_more</span>
+      </div>
+
+      <div class="search-wrapper white-btn">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="Search for services...">
+      </div>
+
+      <div class="user-icons">
+        <div class="cart-wrapper">
+          <span class="material-icons">shopping_bag</span>
+          <span class="cart-badge">1</span>
+        </div>
+        <span class="material-icons profile-icon">account_circle</span>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <div class="dashboard">
-
-  <!-- HERO -->
   <div class="hero">
-
-    <!-- LEFT -->
     <div class="hero-left">
       <h1>Home services at your doorstep</h1>
 
       <div class="service-box">
-        <p>What are you looking for?</p>
-
+        <p class="service-title">What are you looking for?</p>
         <div class="service-grid">
-
-<div class="service-item">
-  <span class="material-icons">electrical_services</span>
-  <p>Electrician</p>
-</div>
-
-<div class="service-item">
-  <span class="material-icons">plumbing</span>
-  <p>Plumber</p>
-</div>
-
-<div class="service-item">
-  <span class="material-icons">cleaning_services</span>
-  <p>Cleaning</p>
-</div>
-
-<div class="service-item">
-  <span class="material-icons">build</span>
-  <p>Repair</p>
-</div>
-
-<div class="service-item">
-  <span class="material-icons">format_paint</span>
-  <p>Painting</p>
-</div>
-
-<div class="service-item">
-  <span class="material-icons">ac_unit</span>
-  <p>AC Service</p>
-</div>
-
+          <div class="service-item">
+            <span class="material-icons">power</span>
+            <p>Electrician</p>
+          </div>
+          <div class="service-item">
+            <span class="material-icons">plumbing</span>
+            <p>Plumber</p>
+          </div>
+          <div class="service-item">
+            <span class="material-icons">cleaning_services</span>
+            <p>Cleaning</p>
+          </div>
+          <div class="service-item">
+            <span class="material-icons">build</span>
+            <p>Repair</p>
+          </div>
+          <div class="service-item">
+            <span class="material-icons">format_paint</span>
+            <p>Painting</p>
+          </div>
+          <div class="service-item">
+            <span class="material-icons">ac_unit</span>
+            <p>AC Service</p>
+          </div>
         </div>
-
       </div>
 
-      <!-- TRUST -->
       <div class="stats">
-        <div>
-          ⭐ <strong>4.8</strong>
-          <p>Service Rating</p>
+        <div class="stat-group">
+          <div class="stat-header">
+            <span class="material-icons icon-gold">stars</span>
+            <strong class="stat-number">4.8</strong>
+          </div>
+          <p class="stat-label">Service Rating</p>
         </div>
-        <div>
-          👥 <strong>12M+</strong>
-          <p>Customers</p>
+
+        <div class="stat-group">
+          <div class="stat-header">
+            <span class="material-icons icon-purple">group</span>
+            <strong class="stat-number">12M+</strong>
+          </div>
+          <p class="stat-label">Customers Globally</p>
         </div>
       </div>
-
     </div>
 
-    <!-- RIGHT -->
     <div class="hero-right">
-
-      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" />
-      <img src="https://images.unsplash.com/photo-1581090700227-1e8b7b3b4c4f" />
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
-      <img src="https://images.unsplash.com/photo-1598514982201-2f64f8f4796c" />
-
+      <div class="single-img-container">
+        <img src="image.png" class="hero-img-large" alt="Home Service">
+      </div>
     </div>
-
   </div>
 
+  <div class="fixie-banner">
+    <h2>Innovative. Customer-first services. <br>Designed for your home.</h2>
+    <p>
+      At FixiePixie, we don't follow trends. We set new standards. Our every service is 
+      deeply researched, built from scratch by industry experts, crafted with precision, 
+      and tested rigorously. So it works beautifully, every single time.
+    </p>
+    <div class="fixie-logo">FIXIEPIXIE</div>
+  </div>
 </div>

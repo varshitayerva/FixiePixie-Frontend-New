@@ -1,18 +1,50 @@
-<app-navbar></app-navbar>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<nav class="navbar solid-green">
+  <div class="nav-container">
+    
+    <div class="brand-wrapper">
+      <span class="brand-text">FixiePixie</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#" class="link">Homes</a>
+      <a href="#" class="link active">Services</a>
+    </div>
+
+    <div class="nav-right">
+      <div class="location-btn white-btn">
+        <span class="material-icons">room</span>
+        <span class="btn-text">Select Location</span>
+        <span class="material-icons">expand_more</span>
+      </div>
+
+      <div class="search-wrapper white-btn">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="Search for services...">
+      </div>
+
+      <div class="user-icons">
+        <div class="cart-wrapper">
+          <span class="material-icons">shopping_bag</span>
+          <span class="cart-badge">1</span>
+        </div>
+        <span class="material-icons profile-icon">account_circle</span>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <div class="dashboard">
 
-  <!-- HERO HEADER -->
   <div class="header">
     <div>
-      <h1>Provider Dashboard</h1>
-      <p>Manage your services, bookings and payments</p>
+      <h1 class="hero-title">Provider Dashboard</h1>
+      <p class="hero-subtitle">Manage your services, bookings and payments</p>
     </div>
   </div>
 
-  <!-- STATS -->
   <div class="stats">
-
     <div class="stat-card">
       <span class="material-icons">request_page</span>
       <h3>24</h3>
@@ -30,39 +62,29 @@
       <h3>4.8</h3>
       <p>Rating</p>
     </div>
-
   </div>
 
-  <!-- ACTION CARDS -->
   <div class="card-container">
-
     <mat-card class="card">
       <span class="material-icons card-icon">add_circle</span>
       <h3>Add Service</h3>
       <p>Create and manage your services</p>
-      <button class="secondary-btn" routerLink="/add-service">
-        Add Service
-      </button>
+      <button class="secondary-btn" routerLink="/add-service">Add Service</button>
     </mat-card>
 
     <mat-card class="card">
       <span class="material-icons card-icon">list_alt</span>
       <h3>View Requests</h3>
       <p>Check incoming service requests</p>
-      <button class="secondary-btn" routerLink="/bookhistory">
-        View Requests
-      </button>
+      <button class="secondary-btn" routerLink="/bookhistory">View Requests</button>
     </mat-card>
 
     <mat-card class="card">
       <span class="material-icons card-icon">account_balance_wallet</span>
       <h3>Payments</h3>
       <p>Track your earnings and payments</p>
-      <button class="secondary-btn">
-        View Payments
-      </button>
+      <button class="secondary-btn">View Payments</button>
     </mat-card>
-
   </div>
 
 </div>

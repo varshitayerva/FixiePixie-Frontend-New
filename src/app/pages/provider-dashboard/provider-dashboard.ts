@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-provider-dashboard',
-  imports: [Navbar, MatCardModule, MatButtonModule, RouterModule],
+  imports: [MatCardModule, MatButtonModule, RouterModule],
   templateUrl: './provider-dashboard.html',
   styleUrl: './provider-dashboard.css',
 })

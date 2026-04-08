@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
@@ -54,4 +54,87 @@ h2 {
 a {
   color: #6366f1;
   text-decoration: none;
+} */
+
+
+/* THEME VARIABLES - Matches your Login palette */
+:root {
+  --primary: #2D5A50;
+  --primary-light: #3a756a;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  /* Use your specific image path here */
+  background-image: url("/login3.png"); 
+  background-size: cover;        
+  background-position: top;   
+  background-repeat: no-repeat;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* We only need the right side container to hold the card */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  width: 400px;
+  padding: 30px;
+  /* Making it transparent to show the background image behind it */
+  background-color: transparent !important;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* REGISTER BUTTON - Uses the Primary Green */
+.primary-btn {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 8px;
+  height: 48px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-light) !important;
+}
+
+/* Material Input Styling override to ensure visibility */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: rgba(255, 255, 255, 0.7); /* Slight white tint for readability */
+  border-radius: 5px;
 }

@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-dashboard',
   standalone:true,
-  imports: [MatCardModule,MatButtonModule,Navbar,RouterModule],
+  imports: [MatCardModule,MatButtonModule,RouterModule],
   templateUrl: './customer-dashboard.html',
   styleUrl: './customer-dashboard.css',
 })
