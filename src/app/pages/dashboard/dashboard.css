@@ -1,0 +1,67 @@
+.dashboard {
+  padding: 40px 60px;
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #0f172a;
+}
+
+.header p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* CARD DESIGN */
+.service-card {
+  width: 260px;
+  padding: 25px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+  border: 1px solid #f1f5f9;
+}
+
+/* ICON */
+.icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.service-card h3 {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* HOVER (subtle, premium) */
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* BUTTON ALIGN */
+button {
+  width: 100%;
+}

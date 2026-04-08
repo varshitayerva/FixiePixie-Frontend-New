@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.left {
+  flex: 1;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.left p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 350px;
+  padding: 30px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+a {
+  color: #6366f1;
+  text-decoration: none;
+}

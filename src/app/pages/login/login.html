@@ -1,0 +1,34 @@
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+    <h1>FixiePixie</h1>
+    <p>Your smart home service partner</p>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+    <mat-card style="background-color:#faf9fd;box-shadow: none;" class="login-card">
+      <h2>Login to your account</h2>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="full-width" routerLink="/dashboard">
+        Login
+      </button>
+
+      <p class="link">
+        New here? <a routerLink="/register">Create account</a>
+      </p>
+    </mat-card>
+  </div>
+
+</div>

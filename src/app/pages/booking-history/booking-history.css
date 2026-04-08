@@ -1,0 +1,40 @@
+.history-page {
+  padding: 40px 60px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* STATUS BADGES */
+.status {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status.confirmed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status.pending {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+.status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
