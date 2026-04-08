@@ -1,0 +1,54 @@
+.payment-page {
+  display: flex;
+  gap: 30px;
+  padding: 40px 60px;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CARDS */
+.summary-card,
+.payment-card {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+/* TITLES */
+h2 {
+  color: #286359;
+  margin-bottom: 20px;
+}
+
+/* SERVICE INFO */
+.service-info p {
+  margin-bottom: 10px;
+  color: #475569;
+}
+
+/* PAYMENT OPTIONS */
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.primary-btn {
+  width: 100%;
+  background: #286359;
+  color: white;
+  border-radius: 10px;
+  height: 45px;
+  border: none;
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background: #3f7d71;
+}

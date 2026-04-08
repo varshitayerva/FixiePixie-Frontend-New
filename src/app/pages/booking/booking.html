@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<div class="booking-page">
+
+  <!-- SERVICE DETAILS -->
+  <div class="card">
+    <h2>{{service?.name}}</h2>
+    <p>{{service?.description}}</p>
+    <h3>₹{{service?.price}}</h3>
+  </div>
+
+  <!-- DATE + SLOT -->
+  <div class="card">
+
+    <h2>Select Date & Time</h2>
+
+    <input type="date" [(ngModel)]="selectedDate">
+
+    <div class="slots">
+      <button (click)="selectedSlot='Morning'">Morning</button>
+      <button (click)="selectedSlot='Afternoon'">Afternoon</button>
+      <button (click)="selectedSlot='Evening'">Evening</button>
+    </div>
+
+    <button class="primary-btn" (click)="bookService()">
+      Book Service
+    </button>
+
+  </div>
+
+</div>

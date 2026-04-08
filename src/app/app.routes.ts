@@ -5,6 +5,7 @@ import { Dashboard } from './pages/customer-dashboard/customer-dashboard';
 import { BookService } from './pages/book-service/book-service';
 import { BookingHistory } from './pages/booking-history/booking-history';
 import { ProviderDashboard } from './pages/provider-dashboard/provider-dashboard';
+import { Payment } from './pages/payment/payment';
 
 export const routes: Routes = [
     {path:'', component:Login},
@@ -18,6 +19,11 @@ export const routes: Routes = [
     //Provider Flow
     {path:'provider-dashboard',component:ProviderDashboard},
 
+    
+    //Payment Flow
+    { path: 'payment', component: Payment },
+
     //fallback
-    {path:'**',redirectTo: ''}
+    {path:'**',redirectTo: ''},
+
 ];
