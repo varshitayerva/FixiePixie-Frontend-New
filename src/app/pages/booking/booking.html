@@ -1,45 +1,49 @@
 <app-navbar></app-navbar>
 
-<div class="booking-page">
-
-  <!-- LEFT -->
-  <div class="service-card">
-
-    <p class="label">Selected Service</p>
-
-    <h2>{{service?.service}}</h2>
-    <p class="desc">{{service?.description}}</p>
-
-    <div class="price-box">
-      ₹{{service?.price}}
+<div class="split-container">
+  <div class="left-panel">
+    <div class="sticky-card">
+      <p class="label-caps">Selected Service</p>
+      <h1 class="display-name">{{selectedService?.serviceName}}</h1>
+      <p class="service-desc">{{selectedService?.description}}</p>
+      
+      <div class="price-tag">
+        <span class="currency">₹</span>
+        <span class="amount">{{selectedService?.price}}</span>
+      </div>
+      
+      <div class="category-badge">
+        <span class="material-icons">verified</span>
+        {{selectedService?.category}}
+      </div>
     </div>
-
   </div>
 
-  <!-- RIGHT -->
-  <div class="form-card">
+  <div class="right-panel">
+    <div class="action-card">
+      <h2>Schedule your service</h2>
+      <p class="subtext">Pick a date and time that works for you.</p>
 
-    <h2>Choose Date & Time</h2>
+      <div class="input-field">
+        <label>Select Date</label>
+        <input type="date" [(ngModel)]="bookingDate">
+      </div>
 
-    <div class="input-group">
-      <label>Date</label>
-      <input type="date" [(ngModel)]="date">
+      <div class="input-field">
+        <label>Available Slots</label>
+        <div class="slot-grid">
+          <button *ngFor="let s of slots" 
+                  [class.active]="selectedSlot === s" 
+                  (click)="selectedSlot = s">
+            {{s}}
+          </button>
+        </div>
+      </div>
+
+      <button class="book-btn" [disabled]="!bookingDate || !selectedSlot" (click)="proceedToPayment()">
+        Book & Proceed to Payment
+        <span class="material-icons">arrow_forward</span>
+      </button>
     </div>
-
-    <div class="input-group">
-      <label>Time Slot</label>
-      <select [(ngModel)]="slot">
-        <option value="">Select Slot</option>
-        <option>Morning (9AM - 12PM)</option>
-        <option>Afternoon (12PM - 3PM)</option>
-        <option>Evening (3PM - 6PM)</option>
-      </select>
-    </div>
-
-    <button class="primary-btn" (click)="bookService()">
-      Continue to Payment →
-    </button>
-
   </div>
-
 </div>

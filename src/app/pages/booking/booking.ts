@@ -1,50 +1,86 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Navbar } from '../../navbar/navbar';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http'; // 1. Add this
 
 @Component({
   selector: 'app-booking',
   standalone: true,
-  imports: [FormsModule,Navbar],
+  imports: [FormsModule, Navbar, CommonModule, HttpClientModule], // 2. Add HttpClientModule
   templateUrl: './booking.html',
   styleUrls: ['./booking.css']
 })
-export class BookingPage {
+export class BookingPage implements OnInit {
+  selectedService: any;
+  bookingDate: string = '';
+  selectedSlot: string = '';
+  slots = ['09:00 AM', '12:00 PM', '03:00 PM', '06:00 PM'];
 
-  service: any;
-  date: string = '';
-  slot: string = '';
+  // Mock User ID - In a real app, get this from your Auth/Login service
+  currentUserId : number = 0;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router, 
+    private http: HttpClient, // 3. Inject HttpClient
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit() {
-    this.service = history.state;
+    if (isPlatformBrowser(this.platformId)) {
+      this.currentUserId = Number(localStorage.getItem("userId")); 
+      const data = localStorage.getItem('selectedService');
+      if (data) this.selectedService = JSON.parse(data);
+    }
+
   }
 
-  bookService() {
-
-    const bookingData = {
-      service: this.service.service,
-      price: this.service.price,
-      description: this.service.description,
-      date: this.date,
-      slot: this.slot,
-      status: 'PENDING'
+  proceedToPayment() {
+    // 4. Prepare the DTO for your Backend
+    const bookingRequestDTO = {
+      userId: this.currentUserId,
+      serviceId: this.selectedService.id, // Ensure this exists in your catalog data
+      date: this.bookingDate + 'T' + this.getSlotTime(this.selectedSlot), // Convert to LocalDateTime format
+      status: 'PENDING_PAYMENT',
+      timeSlot: this.selectedSlot
     };
+    console.log("DTO:", bookingRequestDTO);
 
-    // GET existing bookings
-    let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+    // 5. Call Backend
+    this.http.post<any>('http://localhost:2003/bookings', bookingRequestDTO)
+      .subscribe({
+        next: (response) => {
+          console.log("Aaaya")
+          console.log('Booking saved in DB:', response);
+          
+          
+          // 6. Redirect to payment with the ID returned from DB
+          const finalBooking = {
+            ...this.selectedService,
+            bookingId: response.id, 
+            date: this.bookingDate,
+            slot: this.selectedSlot
+          };
 
-    // ADD new booking
-    bookings.push(bookingData);
+          console.log("Sid",finalBooking);
+          
+          
+          this.router.navigate(['/payment'], { state: finalBooking });
+        },
+        error: (err) => {
+          console.error('Failed to create booking', err);
+          alert('Could not initiate booking. Please try again.');
+        }
+      });
+  }
 
-    // SAVE back
-    localStorage.setItem('bookings', JSON.stringify(bookings));
-
-    // NAVIGATE to payment
-    this.router.navigate(['/payment'], {
-      state: bookingData
-    });
+  // Helper to format time for Spring Boot LocalDateTime
+  getSlotTime(slot: string): string {
+    if (slot.includes('09:00 AM')) return '09:00:00';
+    if (slot.includes('12:00 PM')) return '12:00:00';
+    if (slot.includes('03:00 PM')) return '15:00:00';
+    if (slot.includes('06:00 PM')) return '18:00:00';
+    return '00:00:00';
   }
 }

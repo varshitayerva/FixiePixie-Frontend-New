@@ -294,3 +294,10 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
 }
+
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+  color: #6b7280;
+}

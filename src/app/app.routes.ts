@@ -5,7 +5,7 @@ import { Dashboard } from './pages/customer-dashboard/customer-dashboard';
 import { BookService } from './pages/book-service/book-service';
 import { BookingHistory } from './pages/booking-history/booking-history';
 import { ProviderDashboard } from './pages/provider-dashboard/provider-dashboard';
-import { Payment } from './pages/payment/payment';
+import { PaymentPage } from './pages/payment/payment';
 import { BookingPage } from './pages/booking/booking';
 import { AddService } from './pages/add-service/add-service';
 import { authGuard } from './auth-guard';
@@ -28,7 +28,7 @@ export const routes: Routes = [
 
   // 🔒 PAYMENT
   { path: 'booking', component: BookingPage, canActivate: [authGuard] },
-  { path: 'payment', component: Payment, canActivate: [authGuard] },
+  { path: 'payment', component: PaymentPage, canActivate: [authGuard] },
 
   // FALLBACK
   { path: '**', redirectTo: '' }

@@ -1,82 +1,121 @@
-.booking-page {
+/* Container Layout */
+.split-container {
   display: flex;
-  gap: 40px;
-  padding: 60px 80px;
-  background: #f6f7f9;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
+  background-color: #f9fafb;
 }
 
-/* CARDS */
-.service-card,
-.form-card {
-  flex: 1;
-  background: white;
-  padding: 35px;
-  border-radius: 24px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.04);
+/* Left Panel: Service Info */
+.left-panel {
+  flex: 0 0 40%;
+  background-color: #ffffff;
+  padding: 60px;
+  border-right: 1px solid #e5e7eb;
 }
 
-/* LEFT CARD */
-.label {
-  font-size: 13px;
+.sticky-card {
+  position: sticky;
+  top: 40px;
+}
+
+.label-caps {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
   color: #6b7280;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.display-name {
+  font-size: 32px;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.service-desc {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.price-tag {
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #059669; /* Solid Green */
+}
+
+/* Right Panel: Form Area */
+.right-panel {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.action-card {
+  width: 100%;
+  max-width: 500px;
+}
+
+.input-field {
+  margin-bottom: 30px;
+}
+
+.input-field label {
+  display: block;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-.service-card h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #2D5A50;
-}
-
-.desc {
-  color: #6b7280;
-  margin: 10px 0 20px;
-}
-
-.price-box {
-  font-size: 26px;
-  font-weight: 800;
-  color: #111827;
-}
-
-/* FORM */
-.form-card h2 {
-  color: #2D5A50;
-  margin-bottom: 20px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 18px;
-}
-
-.input-group label {
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-input,
-select {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  outline: none;
-}
-
-/* BUTTON */
-.primary-btn {
+.input-field input[type="date"] {
   width: 100%;
-  background: #2D5A50;
-  color: white;
-  border-radius: 12px;
-  height: 45px;
-  margin-top: 10px;
-  border: none;
-  transition: 0.2s;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
-.primary-btn:hover {
-  background: #3f7d71;
+/* Slot Selection Grid */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.slot-grid button {
+  padding: 12px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slot-grid button.active {
+  background: #059669;
+  color: white;
+  border-color: #059669;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 16px;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.book-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
 }

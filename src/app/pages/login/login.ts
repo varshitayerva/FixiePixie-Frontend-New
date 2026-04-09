@@ -56,6 +56,8 @@ export class Login {
           const token = res.data.token;
           const role = res.data.role;
 
+          const userId = res.data.userId;
+          localStorage.setItem('userId',userId)
           localStorage.setItem('token', token);
 
           localStorage.setItem('role', role);

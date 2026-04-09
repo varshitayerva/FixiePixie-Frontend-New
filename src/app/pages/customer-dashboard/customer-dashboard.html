@@ -112,7 +112,7 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<nav class="navbar solid-green">
+<!-- <nav class="navbar solid-green">
   <div class="nav-container">
     <div class="brand-wrapper">
       <span class="brand-text">FixiePixie</span>
@@ -144,8 +144,9 @@
       </div>
     </div>
   </div>
-</nav>
+</nav> -->
 
+<app-navbar></app-navbar>
 <div class="dashboard">
 
   <div class="hero">
@@ -156,10 +157,17 @@
 
       <div class="service-box">
         <p class="service-title">What are you looking for?</p>
+        <div *ngIf="services.length === 0" class="loading">
+          Loading services...
+        </div>
         <div class="service-grid">
 
 
-          <div class="service-item" *ngFor="let service of services" routerLink="/payment">
+          <div 
+            class="service-item"
+            *ngFor="let service of services"
+            (click)="goToBooking(service)"
+          >
             <span class="material-icons service-icon">
               {{ getIcon(service.category) }}
             </span>
