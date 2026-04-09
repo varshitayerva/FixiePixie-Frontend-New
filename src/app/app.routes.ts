@@ -8,10 +8,13 @@ import { ProviderDashboard } from './pages/provider-dashboard/provider-dashboard
 import { Payment } from './pages/payment/payment';
 import { BookingPage } from './pages/booking/booking';
 import { AddService } from './pages/add-service/add-service';
+import { Profile } from './pages/profile/profile';
 import { authGuard } from './auth-guard';
 
 
 export const routes: Routes = [
+
+
 
   // PUBLIC
   { path: '', component: Login },
@@ -29,7 +32,7 @@ export const routes: Routes = [
   // 🔒 PAYMENT
   { path: 'booking', component: BookingPage, canActivate: [authGuard] },
   { path: 'payment', component: Payment, canActivate: [authGuard] },
-
+  { path: 'profile', component: Profile, canActivate: [authGuard] },
   // FALLBACK
   { path: '**', redirectTo: '' }
 ];

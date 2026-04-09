@@ -1,0 +1,180 @@
+.profile-page {
+  padding: 40px 70px;
+  min-height: 100vh;
+  background: #f4f6f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: white;
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  margin-bottom: 32px;
+}
+
+.avatar-box {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+  background: #286359;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.profile-meta h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #142837;
+}
+
+.subtitle {
+  margin: 8px 0 14px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.about {
+  margin: 0;
+  max-width: 620px;
+  color: #475569;
+  line-height: 1.75;
+}
+
+.action-group {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+}
+
+.primary-btn,
+.secondary-btn,
+.action-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.primary-btn {
+  background: #286359;
+  color: white;
+}
+
+.secondary-btn {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.primary-btn:hover {
+  background: #1f4f44;
+}
+
+.secondary-btn:hover {
+  background: #cbd5e1;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.info-card,
+.stats-card,
+.settings-card {
+  background: white;
+  padding: 26px;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.info-card h2,
+.stats-card h2,
+.settings-card h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #142837;
+  font-size: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  color: #475569;
+}
+
+.info-row span {
+  color: #64748b;
+}
+
+.stat-list {
+  display: grid;
+  gap: 16px;
+}
+
+.stat-item {
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-item span {
+  color: #64748b;
+}
+
+.stat-item strong {
+  font-size: 20px;
+  color: #142837;
+}
+
+.settings-card .action-btn {
+  width: 100%;
+  text-align: left;
+  background: #f8fafc;
+  color: #102a43;
+  margin-bottom: 12px;
+}
+
+.settings-card .action-btn:hover {
+  background: #e2e8f0;
+}
+
+@media (max-width: 960px) {
+  .profile-page {
+    padding: 24px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-group {
+    width: 100%;
+    justify-content: stretch;
+    flex-wrap: wrap;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
