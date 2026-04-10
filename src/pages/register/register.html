@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="right">
+
+    <mat-card class="register-card">
+
+      <h2>Create account</h2>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <!-- NAME -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Full Name">
+        </mat-form-field>
+
+        <!-- EMAIL -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email">
+        </mat-form-field>
+
+        <!-- PASSWORD -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+
+        <!-- ADDRESS -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address">
+        </mat-form-field>
+
+        <!-- PHONE NUMBER -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Phone Number</mat-label>
+          <input matInput type="number" formControlName="number">
+        </mat-form-field>
+
+        <!-- ROLE -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role">
+            <mat-option value="ROLE_USER">Customer</mat-option>
+            <mat-option value="ROLE_ADMIN">Service Provider</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- BUTTON -->
+        <div class="btn-group">
+          <button mat-flat-button class="primary-btn" type="submit">
+            Register
+          </button>
+        </div>
+
+      </form>
+
+      <p class="link">
+        Already have an account?
+        <a routerLink="/login">Login</a>
+      </p>
+
+    </mat-card>
+
+  </div>
+</div>

@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-image: url("/login3.png");
+  background-size: cover;        
+  background-position: top;   
+  background-repeat: no-repeat;
+  font-family: 'Poppins', sans-serif;
+}
+
+.left {
+  flex: 1;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.left p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 350px;
+  padding: 30px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+a {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* PRIMARY BUTTON */
+.primary-btn {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 8px;
+  height: 44px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-light) !important;
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+  border-radius: 8px;
+  height: 44px;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  transition: 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(40, 99, 89, 0.08);
+}
