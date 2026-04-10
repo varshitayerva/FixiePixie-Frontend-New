@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+/* :root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --subtext: #64748b;
+  --primary: #4f46e5;
+  --border: #e2e8f0;
+} */
+
+:root {
+  --primary: #286359;
+  --primary-light: #3f7d71;
+  --text: #286359;
+}
