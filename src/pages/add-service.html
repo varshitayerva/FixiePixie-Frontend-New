@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+<div class="add-service-page">
+  <div class="blob-1"></div>
+  <div class="blob-2"></div>
+
+  <div class="page-container">
+    
+    <div class="visual-section">
+      <div class="abstract-ui">
+        <div class="window-bar"><span></span><span></span><span></span></div>
+        <div class="skeleton-content">
+          <div class="skeleton-line long"></div>
+          <div class="skeleton-circle"></div>
+        </div>
+      </div>
+      <h2>New Service</h2>
+      <p>Adding a new service takes less than a minute. Fill in the details to go live.</p>
+    </div>
+
+    <div class="form-card">
+      <h1>Add Service</h1>
+      
+      <div class="input-group">
+        <label>Service Name</label>
+        <input type="text" [(ngModel)]="serviceName" placeholder="e.g. AC Repair">
+      </div>
+
+      <div class="row">
+        <div class="input-group flex-1">
+          <label>Price (₹)</label>
+          <input type="number" [(ngModel)]="price" placeholder="0">
+        </div>
+
+        <div class="input-group flex-1">
+          <label>Category</label>
+          <select [(ngModel)]="category">
+            <option value="">Select</option>
+            <option value="HOME_SERVICE">Home</option>
+            <option value="CLEANING">Cleaning</option>
+            <option value="ELECTRICAL">Electrical</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Description</label>
+        <textarea [(ngModel)]="description" rows="2" placeholder="Brief description..."></textarea>
+      </div>
+
+      <button class="primary-btn" (click)="addService()">
+        Create
+        <i class="arrow-right">→</i>
+      </button>
+    </div>
+
+  </div>
+</div>
