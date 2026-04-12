@@ -1,0 +1,121 @@
+/* Container Layout */
+.split-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  background-color: #f9fafb;
+}
+
+/* Left Panel: Service Info */
+.left-panel {
+  flex: 0 0 40%;
+  background-color: #ffffff;
+  padding: 60px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sticky-card {
+  position: sticky;
+  top: 40px;
+}
+
+.label-caps {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.display-name {
+  font-size: 32px;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.service-desc {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.price-tag {
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #059669; /* Solid Green */
+}
+
+/* Right Panel: Form Area */
+.right-panel {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.action-card {
+  width: 100%;
+  max-width: 500px;
+}
+
+.input-field {
+  margin-bottom: 30px;
+}
+
+.input-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.input-field input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Slot Selection Grid */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.slot-grid button {
+  padding: 12px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slot-grid button.active {
+  background: #059669;
+  color: white;
+  border-color: #059669;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 16px;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.book-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
