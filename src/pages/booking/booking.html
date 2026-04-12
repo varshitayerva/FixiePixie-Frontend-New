@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="split-container">
+  <div class="left-panel">
+    <div class="sticky-card">
+      <p class="label-caps">Selected Service</p>
+      <h1 class="display-name">{{selectedService?.serviceName}}</h1>
+      <p class="service-desc">{{selectedService?.description}}</p>
+      
+      <div class="price-tag">
+        <span class="currency">₹</span>
+        <span class="amount">{{selectedService?.price}}</span>
+      </div>
+      
+      <div class="category-badge">
+        <span class="material-icons">verified</span>
+        {{selectedService?.category}}
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="action-card">
+      <h2>Schedule your service</h2>
+      <p class="subtext">Pick a date and time that works for you.</p>
+
+      <div class="input-field">
+        <label>Select Date</label>
+        <input type="date" [(ngModel)]="bookingDate">
+      </div>
+
+      <div class="input-field">
+        <label>Available Slots</label>
+        <div class="slot-grid">
+          <button *ngFor="let s of slots" 
+                  [class.active]="selectedSlot === s" 
+                  (click)="selectedSlot = s">
+            {{s}}
+          </button>
+        </div>
+      </div>
+
+      <button class="book-btn" [disabled]="!bookingDate || !selectedSlot" (click)="proceedToPayment()">
+        Book & Proceed to Payment
+        <span class="material-icons">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</div>
