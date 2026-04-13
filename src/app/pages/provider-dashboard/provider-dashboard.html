@@ -1,0 +1,50 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<app-navbar></app-navbar>
+<div class="dashboard">
+
+  <div class="header">
+    <div>
+      <h1 class="hero-title">Provider Dashboard</h1>
+      <p class="hero-subtitle">Manage your services, bookings and payments</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <span class="material-icons">request_page</span>
+      <h3>24</h3>
+      <p>Requests</p>
+    </div>
+
+    <div class="stat-card">
+      <span class="material-icons">payments</span>
+      <h3>$1,240</h3>
+      <p>Earnings</p>
+    </div>
+
+    <div class="stat-card">
+      <span class="material-icons">star</span>
+      <h3>4.8</h3>
+      <p>Rating</p>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <mat-card class="card">
+      <span class="material-icons card-icon">add_circle</span>
+      <h3>Add Service</h3>
+      <p>Create and manage your services</p>
+      <button routerLink="/add-service" class="secondary-btn" routerLink="/add-service">Add Service</button>
+    </mat-card>
+
+    <mat-card class="card">
+      <span class="material-icons card-icon">list_alt</span>
+      <h3>View Requests</h3>
+      <p>Check incoming service requests</p>
+      <button class="secondary-btn" routerLink="/bookhistory">View Requests</button>
+    </mat-card>
+
+  </div>
+
+</div>

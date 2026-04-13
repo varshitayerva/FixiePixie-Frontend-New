@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="split-container">
+  <div class="left-panel">
+    <div class="sticky-card">
+      <p class="label-caps">Final Summary</p>
+      <h1 class="display-name">{{bookingDetails?.serviceName}}</h1>
+
+      <div class="summary-details">
+        <div class="detail-row">
+          <span class="material-icons">calendar_today</span>
+          <span>{{bookingDetails?.date}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="material-icons">schedule</span>
+          <span>{{bookingDetails?.slot}}</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="total-section">
+        <p>Amount to Pay</p>
+        <h2 class="price-text">₹{{bookingDetails?.price}}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="payment-card">
+      <h3>Scan to Pay</h3>
+      <p>Scan the QR code using any UPI App</p>
+
+      <div class="qr-wrapper" (click)="onPaymentHover()">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=FixiePixiePay" alt="QR Code">
+
+        <div class="hover-overlay" [style.display]="isProcessing ? 'flex' : ''">
+          <div class="loader"></div>
+          <p>Processing Payment...</p>
+        </div>
+      </div>
+
+      <p class="secure-text">
+        <span class="material-icons">lock</span>
+        Secure Encrypted Payment
+      </p>
+    </div>
+  </div>
+</div>

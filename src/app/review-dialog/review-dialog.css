@@ -1,0 +1,55 @@
+.title {
+  margin-bottom: 10px;
+  color: #2D5A50;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.stars {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.stars span {
+  color: #cbd5e1;
+  margin-right: 5px;
+}
+
+.stars span.active {
+  color: #f59e0b;
+}
+
+.actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel {
+  background: #e2e8f0;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.submit {
+  background: #2D5A50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}

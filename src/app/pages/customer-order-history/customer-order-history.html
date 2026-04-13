@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+
+<div class="history-page">
+  <div class="container">
+    <div class="header">
+      <h1>My Orders</h1>
+      <p>Your booked services</p>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Bookings</h3>
+        <span class="count">{{bookings.length}} Orders</span>
+      </div>
+
+      <table mat-table [dataSource]="bookings" class="w-100">
+
+        <ng-container matColumnDef="serviceName">
+          <th mat-header-cell *matHeaderCellDef> Service </th>
+          <td mat-cell *matCellDef="let element">
+            <strong>{{element.serviceName}}</strong>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Schedule </th>
+          <td mat-cell *matCellDef="let element">
+            <div class="schedule-cell">
+              <span>{{element.date | date:'mediumDate'}}</span>
+              <span class="time">{{element.timeSlot}}</span>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element">
+            <span class="status-badge" [ngClass]="statusClass(element.status)">
+              {{statusLabel(element.status)}}
+            </span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+
+          <td mat-cell *matCellDef="let element">
+
+            <div *ngIf="element.rating; else reviewBtn" class="review-display">
+              <div class="stars">
+                <span *ngFor="let star of [1,2,3,4,5]" [class.active]="star <= element.rating">★</span>
+              </div>
+              <div class="comment">
+                {{element.comment}}
+              </div>
+            </div>
+
+            <ng-template #reviewBtn>
+              <button class="review-btn" (click)="openReview(element)" *ngIf="!element.rating">
+                Give Review
+              </button>
+            </ng-template>
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <div *ngIf="bookings.length === 0 && !loading" class="empty-state">
+        <p>No bookings found.</p>
+      </div>
+    </div>
+  </div>
+</div>

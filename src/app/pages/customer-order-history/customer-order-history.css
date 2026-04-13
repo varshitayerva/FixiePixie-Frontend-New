@@ -1,0 +1,226 @@
+.history-page {
+  background: #f8fafb;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  color: #2D5A50;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+
+.table-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+}
+
+
+.table-header {
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table-header h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.count {
+  font-size: 12px;
+  color: #94a3b8;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  background: #fcfdfe;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td.mat-cell {
+  padding: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 14px;
+}
+
+td strong {
+  color: #2D5A50;
+  font-weight: 600;
+}
+
+.schedule-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-cell .time {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.confirmed {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.pending-payment {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.pending {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.empty-state {
+  padding: 50px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
+}
+
+
+.review-btn {
+  background: #2D5A50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.review-btn:hover {
+  background: #1f3f38;
+}
+
+.success-snackbar {
+  background: #059669;
+  color: white;
+}
+
+.error-snackbar {
+  background: #dc2626;
+  color: white;
+}
+
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2D5A50;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  height: 90px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  transition: 0.2s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #2D5A50;
+  box-shadow: 0 0 0 2px rgba(45, 90, 80, 0.2);
+}
+
+
+.stars {
+  display: flex;
+  gap: 6px;
+  font-size: 26px;
+}
+
+.stars span {
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.stars span.active {
+  color: #f59e0b;
+  transform: scale(1.1);
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel {
+  background: #f1f5f9;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.submit {
+  background: #2D5A50;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.submit:hover {
+  background: #1f3f38;
+}
