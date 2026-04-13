@@ -16,25 +16,20 @@ export const routes: Routes = [
 
 
 
-  // PUBLIC
   { path: '', component: Login },
   { path: 'register', component: Register },
 
-  // 🔒 CUSTOMER ROUTES
   { path: 'customer-dashboard', component: Dashboard, canActivate: [authGuard] },
   { path: 'bookservice', component: BookService, canActivate: [authGuard] },
   { path: 'bookhistory', component: BookingHistory, canActivate: [authGuard] },
 
-  // 🔒 PROVIDER ROUTES
   { path: 'provider-dashboard', component: ProviderDashboard, canActivate: [authGuard] },
   { path: 'add-service', component: AddService, canActivate: [authGuard] },
 
-  // 🔒 PAYMENT
   { path: 'booking', component: BookingPage, canActivate: [authGuard] },
   { path: 'payment', component: PaymentPage, canActivate: [authGuard] },
 
   {path:'profile', component:Profile, canActivate:[authGuard]},
-
-  // FALLBACK
+  
   { path: '**', redirectTo: '' }
 ];

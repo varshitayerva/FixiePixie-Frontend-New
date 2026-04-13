@@ -1,0 +1,32 @@
+<div class="booking-page">
+
+  <mat-card class="booking-card">
+    <h2>Book a Service</h2>
+    <p>Select your service and preferred date</p>
+
+    <!-- Service -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Service</mat-label>
+      <mat-select>
+        <mat-option value="electrician">Electrician</mat-option>
+        <mat-option value="plumber">Plumber</mat-option>
+        <mat-option value="cleaning">Cleaning</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Date -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Select Date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Button -->
+    <button mat-flat-button color="primary" class="full-width" >
+      Confirm Booking
+    </button>
+
+  </mat-card>
+
+</div>

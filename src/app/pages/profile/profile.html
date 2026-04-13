@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="!user" class="loading-container">
+  <p>Loading profile...</p>
+</div>
+
+<section class="profile-page" *ngIf="user">
+  <div class="profile-header">
+    <div class="avatar-box">
+      <span>{{ getInitials(user.name) }}</span>
+    </div>
+
+    <div class="profile-meta">
+      <h1>{{ user.name }}</h1>
+      <p class="subtitle">{{ user.role || 'Customer' }}</p>
+      <p class="about">{{ user.about || 'No bio provided yet.' }}</p>
+    </div>
+  </div>
+
+  <div class="profile-grid">
+    <div class="info-card">
+      <h2>Contact Information</h2>
+      <div class="info-row"><span>Email</span><strong>{{ user.email }}</strong></div>
+      <div class="info-row"><span>Phone</span><strong>{{ user.number || 'Not provided' }}</strong></div>
+      <div class="info-row"><span>Location</span><strong>{{ user.location || 'India' }}</strong></div>
+    </div>
+
+    <div class="stats-card">
+      <h2>Account Summary</h2>
+      <div class="stat-list">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <span>{{ stat.label }}</span>
+          <strong>{{ stat.value }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-card">
+      <h2>Quick Actions</h2>
+      <button routerLink="/customer-order-history" class="action-btn" *ngIf="role !== 'ROLE_ADMIN'">
+        Booking History
+      </button>
+    </div>
+  </div>
+</section>

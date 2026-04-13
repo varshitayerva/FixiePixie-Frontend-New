@@ -1,0 +1,25 @@
+<div style="padding: 20px;">
+ <h2 class="title">Give Review</h2>
+
+<div class="content">
+  
+  <label>Rating</label>
+  <div class="stars">
+    <span 
+      *ngFor="let star of [1,2,3,4,5]" 
+      (click)="rating = star"
+      [class.active]="star <= rating">
+      ★
+    </span>
+  </div>
+
+  <label>Comment</label>
+  <textarea [(ngModel)]="comment" placeholder="Write your experience..."></textarea>
+
+</div>
+
+<div class="actions">
+  <button class="cancel" (click)="close()">Cancel</button>
+  <button class="submit" (click)="submit()">Submit</button>
+</div> 
+</div>

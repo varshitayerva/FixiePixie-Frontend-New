@@ -4,17 +4,22 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './interceptors/auth.interceptor';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes), provideClientHydration(withEventReplay()),
     provideHttpClient(
-      withInterceptors([authInterceptor])
+      withInterceptors([authInterceptor]),
+      withFetch()
+      
     ),
-    CookieService
+    CookieService,
+     
+    provideAnimationsAsync()   
+  
   ]
 };

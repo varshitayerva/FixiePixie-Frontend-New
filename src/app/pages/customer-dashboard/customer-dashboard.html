@@ -1,0 +1,79 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<app-navbar></app-navbar>
+<div class="dashboard">
+
+  <div class="hero">
+
+    <div class="hero-left">
+      <h1>Home services at your doorstep</h1>
+
+      <div class="service-box">
+        <p class="service-title">What are you looking for?</p>
+        <div *ngIf="services.length === 0" class="loading">
+          Loading services...
+        </div>
+        <div class="service-grid">
+
+
+          <div 
+            class="service-item"
+            *ngFor="let service of services"
+            (click)="goToBooking(service)"
+          >
+            <span class="material-icons service-icon">
+              {{ getIcon(service.category) }}
+            </span>
+
+            <p class="service-name">
+              {{ service.serviceName }}
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-group">
+          <div class="stat-header">
+            <span class="material-icons icon-gold">stars</span>
+            <strong class="stat-number">4.8</strong>
+          </div>
+          <p class="stat-label">Service Rating</p>
+        </div>
+
+        <div class="stat-group">
+          <div class="stat-header">
+            <span class="material-icons icon-purple">group</span>
+            <strong class="stat-number">12M+</strong>
+          </div>
+          <p class="stat-label">Customers Globally</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+      <div class="single-img-container">
+        <img src="image.png" class="hero-img-large" alt="Home Service">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fixie-banner">
+    <h2>
+      Innovative. Customer-first services. <br>
+      Designed for your home.
+    </h2>
+
+    <p>
+      At FixiePixie, we don't follow trends. We set new standards. Our every service is
+      deeply researched, built from scratch by industry experts, crafted with precision,
+      and tested rigorously. So it works beautifully, every single time.
+    </p>
+
+    <div class="fixie-logo">FIXIEPIXIE</div>
+  </div>
+
+</div>

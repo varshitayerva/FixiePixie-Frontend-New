@@ -1,0 +1,101 @@
+.minimal-footer {
+  background: #0a0f1a; 
+  padding: 80px 20px 40px 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer-logo span {
+  color: #10b981; 
+}
+
+.project-tagline {
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  margin-bottom: 40px;
+}
+
+.tagline-divider {
+  margin: 0 10px;
+  color: #334155;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  margin-bottom: 40px;
+}
+
+.credit-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #10b981;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.member {
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.member .name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e2e8f0;
+  position: relative;
+  display: inline-block;
+}
+
+.member:hover {
+  transform: translateY(-3px);
+}
+
+.member:hover .name {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  font-size: 13px;
+  color: #475569;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr; 
+    gap: 16px;
+  }
+}

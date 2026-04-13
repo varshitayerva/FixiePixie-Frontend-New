@@ -21,11 +21,9 @@ export class Navbar implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Run once on load
     this.updateRole();
   }
 
-  // Instead of ngDoCheck, use a method or a getter
   updateRole() {
     if (isPlatformBrowser(this.platformId)) {
       this.role = localStorage.getItem('role');
